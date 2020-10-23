@@ -8,6 +8,7 @@ https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-she
 
   
 az login
+
 az account set --subscription={id}
  
 
