@@ -37,7 +37,7 @@ resource "azurerm_api_management_api" "example" {
   protocols           = ["https"]
 
   import {
-    content_format = "swagger-link-json"
-    content_value  = "http://conferenceapi.azurewebsites.net/?format=json"
+    content_format = "swagger-json"
+    content_value  = file("${path.module}/conference-api.json")
   }
 }
