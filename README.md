@@ -13,10 +13,11 @@ This repository contains an example on how to set up an Azure APIM CI/CD pipelin
 1. Install terraform https://learn.hashicorp.com/tutorials/terraform/install-cli
 
 2. Log in to Azure through the console: https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell
-
-    az login
-    az account set --subscription={id} # If you have more than one account
   
+    provider "azurerm" {    
+	    version = "=2.20.0"	    
+	    features {}  
+    }
 
 3. Initialize terraform
 
@@ -37,7 +38,7 @@ This repository contains an example on how to set up an Azure APIM CI/CD pipelin
 
 After the Terraform init:
 
-  1. create main.tf  with:
+  1. create main.tf with:
 
     provider "azurerm" {    
 	    version = "=2.20.0"	    
