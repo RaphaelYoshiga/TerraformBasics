@@ -10,26 +10,26 @@ This repository contains an example on how to set up an Azure APIM CI/CD pipelin
 
 ### Running this example
 
-1. Install terraform https://learn.hashicorp.com/tutorials/terraform/install-cli
+  1. Install terraform https://learn.hashicorp.com/tutorials/terraform/install-cli
 
-2. Log in to Azure through the console: https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell
+  2. Log in to Azure through the console: https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell
   
     provider "azurerm" {    
 	    version = "=2.20.0"	    
 	    features {}  
     }
 
-3. Initialize terraform
+  3. Initialize terraform
 
     terraform init
 
-4. Change the apim_name under the main.tfvars to ensure you have a unique APIM name.
+  4. Change the apim_name under the main.tfvars to ensure you have a unique APIM name.
 
-5. Run a plan to check what is going to happen
+  5. Run a plan to check what is going to happen
 
     terraform plan -var-file="main.tfvars"
 
-6. Try to apply:
+1. Try to apply:
 
     terraform apply -var-file="main.tfvars"
 
