@@ -14,10 +14,8 @@ This repository contains an example on how to set up an Azure APIM CI/CD pipelin
 
   2. Log in to Azure through the console: https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell
   
-    provider "azurerm" {    
-	    version = "=2.20.0"	    
-	    features {}  
-    }
+    az login
+    az account set --subscription={YourSubscriptionId} # If you need to select multiple accounts
 
   3. Initialize terraform
 
@@ -29,7 +27,7 @@ This repository contains an example on how to set up an Azure APIM CI/CD pipelin
 
     terraform plan -var-file="main.tfvars"
 
-1. Try to apply:
+  6. Try to apply:
 
     terraform apply -var-file="main.tfvars"
 
@@ -47,28 +45,22 @@ After the Terraform init:
 
   
 
-2. Creating a resource group*
+  2. Creating a resource group*
 
     resource "azurerm_resource_group" "example" {    
         name = "tf-test"
         location = "West Europe"    
     }
 
-    terraform init
-    
     terraform plan
     
     terraform apply
-
-  
-
-### Adding app insights
-
-https://www.terraform.io/docs/providers/azurerm/r/application_insights.html
   
 # Next steps:
 
-It's important to understand about the terraform states. States are the current state of what terraform thinks your Azure infrastructure looks like, it knows what to delete/create/update from it. So for collaborating with multiple people, this file should be in some sort of backend, for example Azure Storage or AWS S3.
+It's important to understand about the terraform states. States are the current state of what terraform thinks your Azure infrastructure looks like, it knows what to delete/create/update from it. So for collaborating with multiple people, this file should be in some sort of backend, for example Azure Storage or AWS S3
+
+This file also contains sensitive data, so it's recommended to not store in source control.
 
 ### Store states in an azure storage
 https://docs.microsoft.com/en-us/azure/developer/terraform/store-state-in-azure-storage
