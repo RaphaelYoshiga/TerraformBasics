@@ -6,7 +6,7 @@
   
 
 This repository contains an example on how to set up an Azure APIM CI/CD pipeline using Terraform.
-[Blog](https://google.com)
+[Blog Post](https://itnext.io/azure-api-management-terraform-ci-cd-2d73ebe13f)
 
 ### Running this example
 
